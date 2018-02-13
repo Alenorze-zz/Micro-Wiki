@@ -18,7 +18,7 @@ class VersionManager(models.Manager):
 
 
 class Version(models.Model):
-    article   = models.OneToOneField(Article, on_delete=models.CASCADE, default=None)
+    article   = models.ForeignKey(Article, on_delete=models.CASCADE, default=None)
     release   = models.CharField(max_length=5)
     title     = models.CharField(max_length=128)
     text      = models.TextField(max_length=2048)
